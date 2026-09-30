@@ -1,0 +1,11 @@
+{
+  "name": "eflat-store",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Eflat storefront and local backend API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  }
+}

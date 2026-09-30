@@ -1,0 +1,36 @@
+{
+  "products": [
+    {
+      "name": "Samsung Galaxy A55 5G",
+      "category": "Phones & tablets",
+      "price": 399000,
+      "stock": 14
+    },
+    {
+      "name": "Apple iPhone 13 128GB",
+      "category": "Phones & tablets",
+      "price": 680000,
+      "stock": 8
+    },
+    {
+      "name": "HP ProBook 450 G9",
+      "category": "Computers",
+      "price": 780000,
+      "stock": 22
+    },
+    {
+      "name": "LG 55 inch 4K Smart TV",
+      "category": "Electronics",
+      "price": 465000,
+      "stock": 4
+    },
+    {
+      "name": "Infinix Note 40 Pro",
+      "category": "Phones & tablets",
+      "price": 165000,
+      "stock": 17
+    }
+  ],
+  "orders": [],
+  "bookings": []
+}

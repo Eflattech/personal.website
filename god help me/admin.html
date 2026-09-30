@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Eflat Admin | Dashboard</title>
+  <link rel="stylesheet" href="admin.css">
+  <script src="admin.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar" id="sidebar">
+    <a class="admin-brand" href="index.html"><span>E</span><strong>Eflat</strong><small>ADMIN</small></a>
+    <nav class="admin-nav" aria-label="Admin navigation">
+      <a class="active" href="#dashboard" data-view="dashboard"><span>▦</span>Dashboard</a>
+      <a href="#products" data-view="products"><span>□</span>Products</a>
+      <a href="#orders" data-view="orders"><span>◷</span>Orders <b>8</b></a>
+      <a href="#customers" data-view="customers"><span>♙</span>Customers</a>
+      <a href="#services" data-view="services"><span>⌁</span>Services</a>
+    </nav>
+    <div class="sidebar-bottom"><a href="index.html"><span>↗</span>View storefront</a><button id="signOutButton" type="button"><span>⇥</span>Sign out</button></div>
+  </aside>
+
+  <main class="admin-main">
+    <header class="admin-header">
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open admin menu">☰</button>
+      <div><p class="kicker">MONDAY, 28 SEPTEMBER 2026</p><h1 id="viewTitle">Good morning, Eflat.</h1></div>
+      <div class="admin-header-actions"><button class="notification-button" type="button" id="notificationButton" aria-label="View notifications">♢<b>3</b></button><div class="admin-avatar">EA</div><div class="admin-user"><strong>Eflat Admin</strong><small>Owner</small></div></div>
+    </header>
+
+    <section class="admin-view active-view" id="dashboardView" data-page="dashboard">
+      <div class="view-intro"><div><p class="kicker">OVERVIEW</p><h2>Here's what's happening.</h2></div><button class="outline-button" id="exportButton" type="button">↓ Export report</button></div>
+      <div class="stat-grid"><article class="stat-card"><span class="stat-icon peach">₦</span><div><p>Total sales</p><strong>₦4,286,500</strong><small class="positive">↑ 18.4% <em>vs last month</em></small></div></article><article class="stat-card"><span class="stat-icon green">◷</span><div><p>Orders</p><strong>126</strong><small class="positive">↑ 12.8% <em>vs last month</em></small></div></article><article class="stat-card"><span class="stat-icon gold">♙</span><div><p>Customers</p><strong>1,842</strong><small class="positive">↑ 9.6% <em>vs last month</em></small></div></article><article class="stat-card"><span class="stat-icon blue">□</span><div><p>Products</p><strong id="productStat">248</strong><small class="neutral">12 low in stock</small></div></article></div>
+      <div class="dashboard-grid"><section class="panel sales-panel"><div class="panel-heading"><div><p class="kicker">REVENUE</p><h3>Sales overview</h3></div><select id="salesPeriod"><option>Last 7 days</option><option>Last 30 days</option><option>This year</option></select></div><div class="chart"><div class="chart-y"><span>₦600k</span><span>₦400k</span><span>₦200k</span><span>₦0</span></div><div class="chart-area"><div class="chart-gridlines"><i></i><i></i><i></i><i></i></div><svg viewBox="0 0 700 245" preserveAspectRatio="none" aria-label="Sales chart"><defs><linearGradient id="chartFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#dd674e" stop-opacity=".24"/><stop offset="1" stop-color="#dd674e" stop-opacity="0"/></linearGradient></defs><path class="chart-fill" d="M0 190 C55 177 70 135 125 158 S185 130 238 145 S302 80 350 120 S420 125 465 92 S525 115 570 64 S630 85 700 20 V245 H0 Z"/><path class="chart-line" d="M0 190 C55 177 70 135 125 158 S185 130 238 145 S302 80 350 120 S420 125 465 92 S525 115 570 64 S630 85 700 20"/></svg><div class="chart-x"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div></div></div></section><section class="panel activity-panel"><div class="panel-heading"><div><p class="kicker">LIVE FEED</p><h3>Recent activity</h3></div><button class="text-button" id="activityButton" type="button">View all</button></div><div class="activity-list"><div><span class="activity-dot order">✓</span><p><strong>New order #EF-1048</strong><small>Adaeze Okonkwo placed an order</small></p><time>2m</time></div><div><span class="activity-dot customer">+</span><p><strong>New customer joined</strong><small>Emeka Nwosu created an account</small></p><time>18m</time></div><div><span class="activity-dot service">⌁</span><p><strong>Service booked</strong><small>Screen repair in Lagos</small></p><time>42m</time></div><div><span class="activity-dot stock">!</span><p><strong>Low stock alert</strong><small>Samsung Galaxy A55 5G</small></p><time>1h</time></div></div></section></div>
+      <section class="panel table-panel"><div class="panel-heading"><div><p class="kicker">ORDERS</p><h3>Recent orders</h3></div><button class="text-button" data-view-link="orders" type="button">View all orders →</button></div><div class="table-scroll"><table><thead><tr><th>Order</th><th>Customer</th><th>Date</th><th>Amount</th><th>Status</th></tr></thead><tbody id="recentOrders"></tbody></table></div></section>
+    </section>
+
+    <section class="admin-view" id="productsView" data-page="products"><div class="view-intro"><div><p class="kicker">CATALOGUE</p><h2>Products</h2></div><button class="primary-button" id="addProductButton" type="button">+ Add product</button></div><section class="panel table-panel"><div class="toolbar"><label class="admin-search">⌕<input id="productSearch" type="search" placeholder="Search products"></label><select id="stockFilter"><option value="all">All stock</option><option value="low">Low stock</option></select></div><div class="table-scroll"><table><thead><tr><th>Product</th><th>Category</th><th>Price</th><th>Stock</th><th>Status</th><th></th></tr></thead><tbody id="productsTable"></tbody></table></div></section></section>
+    <section class="admin-view" id="ordersView" data-page="orders"><div class="view-intro"><div><p class="kicker">FULFILMENT</p><h2>Orders</h2></div><button class="outline-button" id="orderFilterButton" type="button">All orders⌄</button></div><section class="panel table-panel"><div class="table-scroll"><table><thead><tr><th>Order</th><th>Customer</th><th>Date</th><th>Amount</th><th>Status</th><th>Action</th></tr></thead><tbody id="ordersTable"></tbody></table></div></section></section>
+    <section class="admin-view" id="customersView" data-page="customers"><div class="view-intro"><div><p class="kicker">COMMUNITY</p><h2>Customers</h2></div><button class="outline-button" id="customerMessageButton" type="button">Message customers</button></div><section class="panel empty-feature"><span>♙</span><h3>Your customer list is ready</h3><p>Customer profiles and order history will appear here as people shop on Eflat.</p></section></section>
+    <section class="admin-view" id="servicesView" data-page="services"><div class="view-intro"><div><p class="kicker">BOOKINGS</p><h2>Services</h2></div><button class="outline-button" id="serviceFilterButton" type="button">All bookings⌄</button></div><section class="panel empty-feature"><span>⌁</span><h3>Service bookings</h3><p>Track repair, installation and cleaning requests from one place.</p></section></section>
+  </main>
+
+  <dialog class="product-dialog" id="productDialog"><button class="dialog-close" id="closeProductDialog" type="button" aria-label="Close form">×</button><p class="kicker">CATALOGUE</p><h2>Add a product</h2><form id="productForm"><label>Product name<input name="name" required placeholder="e.g. Eflat Smart Speaker"></label><label>Category<select name="category"><option>Electronics</option><option>Phones & tablets</option><option>Computers</option><option>Home & kitchen</option><option>Fashion</option></select></label><div class="form-row"><label>Price<input name="price" type="number" required placeholder="50000"></label><label>Stock<input name="stock" type="number" required placeholder="20"></label></div><button class="primary-button" type="submit">Save product</button><p class="form-message" id="productMessage"></p></form></dialog><div class="admin-toast" id="adminToast" role="status" aria-live="polite"></div>
+</body>
+</html>
